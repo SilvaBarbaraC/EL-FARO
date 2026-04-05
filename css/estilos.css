@@ -77,6 +77,7 @@ table {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columnas */
     gap: 20px;
+    background-color: transparent;
 }
 
 /* Encabezado de tabla oculto */
