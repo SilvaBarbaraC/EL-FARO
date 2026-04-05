@@ -25,7 +25,8 @@ header {
 }
 
 header img {
-    width: 120px;
+    width: 15%;
+    max-width: 200px;
     margin-bottom: 10px;
 }
 
