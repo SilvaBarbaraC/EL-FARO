@@ -1,100 +1,138 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+/* Importación de fuente externa desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilo general del sitio */
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif; /* Nueva tipografía */
     font-size: 16px;
-    background-color: #ffffff;
+    background-color: #f5f5f5; /* Fondo gris solicitado */
     color: #111;
     line-height: 1.6;
 }
 
+/* Header */
 header {
     border-bottom: 3px solid #e0e0e0;
     padding: 30px 0;
     text-align: center;
 }
 
-    header img {
-        width: 120px;
-        margin-bottom: 10px;
-    }
+header img {
+    width: 120px;
+    margin-bottom: 10px;
+}
 
-    header h1 {
-        font-family: "Times New Roman", serif;
-        font-size: 40px;
-        color: #4b0082; 
-        font-weight: bold;
-    }
+header h1 {
+    font-size: 40px;
+    color: #4b0082;
+    font-weight: bold;
+}
 
+/* Navegación */
 nav {
     border-bottom: 1px solid #ddd;
     padding: 15px 0;
     text-align: center;
 }
 
-    nav a {
-        text-decoration: none;
-        color: #333;
-        margin: 0 20px;
-        font-weight: 600;
-        letter-spacing: 1px;
-    }
+/* Links con subrayado por defecto */
+nav a {
+    text-decoration: underline;
+    color: #333;
+    margin: 0 20px;
+    font-weight: 400;
+}
 
-        nav a:hover {
-            color: #4b0082; 
-        }
+/* Hover en links */
+nav a:hover {
+    font-weight: bold; /* Negrita */
+    text-decoration: none; /* Sin subrayado */
+}
 
+/* Contenedor principal */
 section {
-    width: 70%;
+    width: 90%;
     margin: 40px auto;
 }
 
-    section h2 {
-        font-family: "Times New Roman", serif;
-        font-size: 40px;
-        margin-bottom: 20px;
-        border-bottom: 2px solid #4b0082; 
-        padding-bottom: 10px;
-    }
+/* Títulos */
+section h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #4b0082;
+    padding-bottom: 10px;
+}
 
+/* Artículos en grilla */
+
+/* Se convierte la tabla en grid visual */
 table {
-    width: 100%;
-    border-collapse: collapse;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 20px;
 }
 
+/* Encabezado de tabla oculto */
 th {
-    text-align: left;
-    font-size: 14px;
-    color: #555;
-    border-bottom: 2px solid #ccc;
-    padding: 10px;
+    display: none;
 }
 
+/* Cada fila como tarjeta */
+tr {
+    display: block;
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+/* Contenido dentro de tarjetas */
 td {
-    padding: 15px 10px;
-    border-bottom: 1px solid #eee;
+    display: block;
+    margin-bottom: 10px;
 }
 
+/* Hover en bloques */
 tr:hover {
-    background-color: #f2f2f2; 
+    background-color: #000000;
+    color: #ffffff;
 }
 
+/* Multimedia */
 video, audio {
     margin-top: 20px;
     width: 100%;
 }
 
+/* Footer personalizado */
 footer {
     margin-top: 50px;
     padding: 20px;
     text-align: center;
     font-size: 14px;
-    color: #777;
-    border-top: 1px solid #ddd;
+    background-color: #c9d2d0; /* color solicitado */
+    color: #31231e; /* color solicitado */
+}
+
+/* Modificaciones Responsivas */
+
+/* Tablet */
+@media (max-width: 900px) {
+    table {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Celular */
+@media (max-width: 500px) {
+    table {
+        grid-template-columns: 1fr;
+    }
 }
