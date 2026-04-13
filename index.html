@@ -2,42 +2,126 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>El Faro - Inicio</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Faro</title>
+
+    <link rel="stylesheet" href="estilos_Semana 3.css">
 </head>
+
 <body>
 
-    <header>
-        <img src="img/logo.png">
-        <h1>El Faro</h1>
-    </header>
+<header>
+    <h1>El Faro</h1>
+    
+    <div id="fechaHora"></div>
+</header>
 
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="deporte.html">Deporte</a>
-        <a href="negocios.html">Negocios</a>
-    </nav>
+<nav>
+    <a href="#">Inicio</a>
+    <a href="#">Noticias</a>
+    <a href="#">Negocios</a>
+    <a href="#">Contacto</a>
+</nav>
 
-    <section>
-        <h2>Noticias Generales</h2>
-        <!-- Tabla utilizada como contenedor de artículos (estilizada como grilla con CSS) -->
+<section>
+    <h2>Agregar artículo</h2>
+
+    
+    <form id="formArticulo">
+        <input type="text" id="titulo" placeholder="Título del artículo" required>
+        <textarea id="descripcion" placeholder="Descripción del artículo" required></textarea>
+        <button type="submit">Agregar artículo</button>
+    </form>
+
+
+    <p>Total de artículos: <span id="contador">0</span></p>
+
+
+    <table id="tablaArticulos">
+       
         <table>
             <tr><th>Título</th><th>Categoría</th><th>Contenido</th></tr>
             <tr><td>Inauguración de nuevo parque</td><td>Ciudad y urbanismo</td><td>En el pueblo de Comala se vive la vida al aire libre, este lunes se llavó a cabo la inauguración del nuevo y único parque de la ciudad, atrás quedaron las tardes en la pila de pasto cortado que era el único punto verde de la ciudad.</td></tr>
             <tr><td>Se reporta alza en el turismo local</td><td>Turismo y ocio</td><td>Aumenta el turismo en la ciudad de Salamanca, las autoridades descartan que haya sido debido a la layenda urbana de las brujas, adjudicándolo al buen manejo publicitario de la ciudad.</td></tr>
             <tr><td>Museos abren sus puertas de manera gratuita al público</td><td>Cultura</td><td>Durante este fin de semana los Museos de todo Chile abrirán de manera gratuita sus puertas en el marco del evento "todos gratis todo cultural".</td></tr>
         </table>
+</section>
 
-        <video controls>
-            <source src="media/video.mp4">
-        </video>
+<section>
+    <h2>Contacto</h2>
 
-        <audio controls>
-            <source src="media/musica.mp3">
-        </audio>
-    </section>
+    <form id="formContacto">
+        <input type="text" placeholder="Nombre" required>
+        <textarea placeholder="Mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+</section>
 
-    <footer>© 2026 El Faro</footer>
+<footer>
+    <p>© 2026 El Faro</p>
+</footer>
+
+<script>
+
+
+function actualizarFechaHora() {
+    const ahora = new Date();
+    const fecha = ahora.toLocaleDateString('es-CL', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+    const hora = ahora.toLocaleTimeString('es-CL');
+
+    document.getElementById('fechaHora').innerHTML = fecha + ' - ' + hora;
+}
+
+setInterval(actualizarFechaHora, 1000);
+actualizarFechaHora();
+
+
+function actualizarContador() {
+    const total = document.querySelectorAll('#tablaArticulos tr').length;
+    document.getElementById('contador').textContent = total;
+}
+
+
+window.addEventListener('load', actualizarContador);
+
+const form = document.getElementById('formArticulo');
+const tabla = document.getElementById('tablaArticulos');
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const titulo = document.getElementById('titulo').value;
+    const descripcion = document.getElementById('descripcion').value;
+
+    const fila = document.createElement('tr');
+
+    fila.innerHTML = `
+        <td><strong>${titulo}</strong></td>
+        <td>${descripcion}</td>
+    `;
+
+    tabla.appendChild(fila);
+
+    actualizarContador();
+
+    form.reset();
+});
+
+
+const formContacto = document.getElementById('formContacto');
+
+formContacto.addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Mensaje enviado correctamente');
+    formContacto.reset();
+});
+</script>
 
 </body>
 </html>
+
