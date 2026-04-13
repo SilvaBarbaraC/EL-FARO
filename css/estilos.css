@@ -138,3 +138,59 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+/* Fecha y hora */
+#fechaHora {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Contador de artículos */
+#contadorArticulos {
+    font-weight: bold;
+    color: #4b0082;
+}
+
+/* Formularios (artículos y contacto) */
+section input,
+section textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Botones */
+section button {
+    background-color: #4b0082;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+    /* Hover botón */
+    section button:hover {
+        background-color: #000;
+    }
+
+/* Subtítulos (formularios) */
+section h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #4b0082;
+}
+
+/* Ajustes responsivos para formularios */
+@media (max-width: 500px) {
+    section input,
+    section textarea {
+        width: 100%;
+    }
+}
