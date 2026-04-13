@@ -194,3 +194,50 @@ section h3 {
         width: 100%;
     }
 }
+
+.card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+/* Hover igual que artículos */
+.card:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Inputs dentro de tarjetas */
+.card input,
+.card textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Botones */
+.card button {
+    background-color: #4b0082;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Hover botón */
+.card button:hover {
+    background-color: #000;
+}
+
+/* Títulos */
+.card h3 {
+    margin-bottom: 10px;
+    color: #4b0082;
+}
