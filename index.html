@@ -10,6 +10,8 @@
     <header>
         <img src="img/logo.png">
         <h1>El Faro</h1>
+
+        <div id="fechaHora"></div>
     </header>
 
     <nav>
@@ -20,13 +22,36 @@
 
     <section>
         <h2>Noticias Generales</h2>
-        <!-- Tabla utilizada como contenedor de artículos (estilizada como grilla con CSS) -->
-        <table>
+
+        <p>Total de artículos: <span id="contadorArticulos"></span></p>
+
+        <table id="tablaArticulos">
             <tr><th>Título</th><th>Categoría</th><th>Contenido</th></tr>
-            <tr><td>Inauguración de nuevo parque</td><td>Ciudad y urbanismo</td><td>En el pueblo de Comala se vive la vida al aire libre, este lunes se llavó a cabo la inauguración del nuevo y único parque de la ciudad, atrás quedaron las tardes en la pila de pasto cortado que era el único punto verde de la ciudad.</td></tr>
-            <tr><td>Se reporta alza en el turismo local</td><td>Turismo y ocio</td><td>Aumenta el turismo en la ciudad de Salamanca, las autoridades descartan que haya sido debido a la layenda urbana de las brujas, adjudicándolo al buen manejo publicitario de la ciudad.</td></tr>
-            <tr><td>Museos abren sus puertas de manera gratuita al público</td><td>Cultura</td><td>Durante este fin de semana los Museos de todo Chile abrirán de manera gratuita sus puertas en el marco del evento "todos gratis todo cultural".</td></tr>
+
+            <tr>
+                <td>Inauguración de nuevo parque</td>
+                <td>Ciudad y urbanismo</td>
+                <td>En el pueblo de Comala se vive la vida al aire libre, este lunes se llavó a cabo la inauguración del nuevo y único parque de la ciudad, atrás quedaron las tardes en la pila de pasto cortado que era el único punto verde de la ciudad.</td>
+            </tr>
+
+            <tr>
+                <td>Se reporta alza en el turismo local</td>
+                <td>Turismo y ocio</td>
+                <td>Aumenta el turismo en la ciudad de Salamanca, las autoridades descartan que haya sido debido a la layenda urbana de las brujas, adjudicándolo al buen manejo publicitario de la ciudad.</td>
+            </tr>
+
+            <tr>
+                <td>Museos abren sus puertas de manera gratuita al público</td>
+                <td>Cultura</td>
+                <td>Durante este fin de semana los Museos de todo Chile abrirán de manera gratuita sus puertas en el marco del evento "todos gratis todo cultural".</td>
+            </tr>
         </table>
+
+        <h3>Agregar nuevo artículo</h3>
+        <input type="text" id="titulo" placeholder="Título del artículo">
+        <input type="text" id="categoria" placeholder="Categoría">
+        <textarea id="contenido" placeholder="Contenido del artículo"></textarea>
+        <button onclick="agregarArticulo()">Publicar artículo</button>
 
         <video controls>
             <source src="media/video.mp4">
@@ -35,12 +60,70 @@
         <audio controls>
             <source src="media/musica.mp3">
         </audio>
+
+        <h3>Contacto</h3>
+        <input type="text" placeholder="Tu nombre">
+        <textarea placeholder="Escribe tu mensaje"></textarea>
+        <button>Enviar</button>
+
     </section>
 
     <footer>© 2026 El Faro</footer>
 
-</body>
-</html>
+    <script>
+      
+        function actualizarFechaHora() {
+            const ahora = new Date();
+            const formato = ahora.toLocaleString('es-CL');
+            document.getElementById("fechaHora").textContent = formato;
+        }
+        setInterval(actualizarFechaHora, 1000);
+        actualizarFechaHora();
+
+        
+        function actualizarContador() {
+            const total = document.getElementById("tablaArticulos").rows.length - 1;
+            document.getElementById("contadorArticulos").textContent = total;
+        }
+        actualizarContador();
+
+       
+        function agregarArticulo() {
+            const titulo = document.getElementById("titulo").value;
+            const categoria = document.getElementById("categoria").value;
+            const contenido = document.getElementById("contenido").value;
+
+            if (!titulo || !categoria || !contenido) {
+                alert("Completa todos los campos");
+                return;
+            }
+
+            const tabla = document.getElementById("tablaArticulos");
+
+            const fila = document.createElement("tr");
+
+           
+            const td1 = document.createElement("td");
+            const td2 = document.createElement("td");
+            const td3 = document.createElement("td");
+
+            td1.textContent = titulo;
+            td2.textContent = categoria;
+            td3.textContent = contenido;
+
+            fila.appendChild(td1);
+            fila.appendChild(td2);
+            fila.appendChild(td3);
+
+            tabla.appendChild(fila);
+
+            document.getElementById("titulo").value = "";
+            document.getElementById("categoria").value = "";
+            document.getElementById("contenido").value = "";
+
+            actualizarContador();
+        }
+    </script>
 
 </body>
 </html>
