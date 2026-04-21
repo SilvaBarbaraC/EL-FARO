@@ -1,35 +1,102 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Negocios</title>
-    <link rel="stylesheet" href="css/estilos.css">
+<meta charset="UTF-8">
+<title>Negocios</title>
+<link rel="stylesheet" href="css/estilos.css">
 </head>
+    
 <body>
 
-    <header>
-        <img src="img/logo.png">
-        <h1>El Faro</h1>
-    </header>
+<div class="avisos">
+<p>💼 Economía: De mal en peor — 📊 Inversiones: Íbamos bien, pero se les ocurrió decir que estabamos en quiebra. — 📢 Colabora con nosotros</p>
+</div>
 
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="deporte.html">Deporte</a>
-        <a href="negocios.html">Negocios</a>
-    </nav>
+<header>
+<img src="img/logo.png" alt="Logo El Faro">
+<h1>El Faro</h1>
+<div id="fechaHora"></div>
+</header>   
+    
+<nav>
+<a href="index.html">Inicio</a>
+<a href="deporte.html">Deportes</a>
+<a href="negocios.html">Negocios</a>
+</nav>
 
-    <section>
-        <h2>Noticias de Negocios</h2>
-        <!-- Tabla utilizada como contenedor de artículos (estilizada como grilla con CSS) -->
-        <table>
-            <tr><th>Título</th><th>Categoría</th><th>Contenido</th></tr>
-            <tr><td>Crecimiento mayor al esperado</td><td>Empresas y Negocios</td><td>La famosa empresa de confites Pruna, ha resaltado sus buenos números este 2026, manifestando en sus palabras que "muchas ganancias, nunca habíamos visto tanta ganacia como este año tanta ganancia".</td></tr>
-            <tr><td>Apertura de nueva Tienda desierta la curiosidad de los transeúntes</td><td>Emprendimientos</td><td>Una curiosa tienda ha inaugurado sus dependencias en la comuna de Rancagua, la tienda "Una tienda imaginaria" causa revuelto al encontrarse aparentemente vacía, cuando se le consultó al dueño este afirmó "esta es una tienda imaginaria, con productos imaginarios para un lugar imaginario".</td></tr>
-            <tr><td>Lazamiento de nueva app</td><td>Tecnología y innovación</td><td>Este pasado Jueves se ha llevado a cabo el lanzamiento de una nueva aplicación para móviles, que tiene como objetivo avisarle a las personas que momento del día es el más conveniente para sacar la basura sin tener que toparse cono sus vecinos. La aplicación ha sido un rotundo éxito.</td></tr>
-        </table>
-    </section>
+<main>
 
-    <footer>© 2026 El Faro</footer>
+<section>
+<h2>Noticias de Negocios</h2>
+<div class="card">
 
+<div class="noticias-grid">
+
+<article class="card">
+<h3>Empresa remece el mundo de las inversiones al posicioarse con su nuevo producto "Limpia parabrisas para anteojos", aseguran que será un boom de ventas entre todos los cortos de vista del país</h3>
+<p>Mercados en alerta ante nuevos ataques entre países, expertos aseguran que aún no les queda claro que anda haciendo un país americano en Medio oriente. Las averiguaciones continúan</p>
+</article>
+
+<article class="card">
+<h3>Nueva inversión</h3>
+<p>Crece el interés en invertir en carne de burro. "Para allá vamos", comentó Florencio Arvejo, criador de burros, quien se encuentra esperanzado por esta posibilidad.</p>
+</article>
+
+</div>
+
+</div>
+</section>
+
+<section class="relacionados">
+<h2>Otros artículos</h2>
+<div class="mini-grid">
+<article class="mini-card">Caos en la bolsa Londinense después de que a su contador jefe se le fuera un cero demás y desatara el caos en la sala</article>
+<article class="mini-card">App de localización de perritos perdidos parecen ser le futuro de la tenencia responsable. Esperamos que la iniciativa de propague y ya no tengamos que leer carteles de mascotas perdidas</article>
+</div>
+</section>
+
+</main>
+
+<footer class="footer">
+<div class="footer-container">
+
+<div class="footer-col">
+<h3>El Faro</h3>
+<p>El portal de noticias que te saca de la oscuridad.</p>
+</div>
+
+<div class="footer-col">
+<h4>Secciones</h4>
+<a href="index.html">Inicio</a>
+<a href="deporte.html">Deportes</a>
+<a href="negocios.html">Negocios</a>
+</div>
+
+<div class="footer-col">
+<h4>Contacto</h4>
+<p>contacto@elfaro.cl</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 El Faro
+</div>
+</footer>
+
+
+<script>
+function actualizarHora() {
+    const ahora = new Date();
+    const opciones = { 
+        year: 'numeric', month: 'long', day: 'numeric',
+        hour: '2-digit', minute: '2-digit', second: '2-digit'
+    };
+    document.getElementById("fechaHora").innerHTML = ahora.toLocaleDateString('es-ES', opciones);
+}
+setInterval(actualizarHora, 1000);
+actualizarHora();
+<script>
+    
 </body>
 </html>
