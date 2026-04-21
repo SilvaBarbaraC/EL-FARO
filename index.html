@@ -1,140 +1,131 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>El Faro - Inicio</title>
-    <link rel="stylesheet" href="css/estilos.css">
+<meta charset="UTF-8">
+<title>El Faro</title>
+<link rel="stylesheet" href="css/estilos.css">
 </head>
+
 <body>
 
-    <header>
-        <img src="img/logo.png">
-        <h1>El Faro</h1>
-
-        <div id="fechaHora"></div>
-    </header>
-
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="deporte.html">Deporte</a>
-        <a href="negocios.html">Negocios</a>
-    </nav>
-
-    <section>
-        <h2>Noticias Generales</h2>
-
-        <p>Total de artículos: <span id="contadorArticulos"></span></p>
-
-        <table id="tablaArticulos">
-            <tr><th>Título</th><th>Categoría</th><th>Contenido</th></tr>
-
-            <tr>
-                <td>Inauguración de nuevo parque</td>
-                <td>Ciudad y urbanismo</td>
-                <td>En el pueblo de Comala se vive la vida al aire libre, este lunes se llavó a cabo la inauguración del nuevo y único parque de la ciudad, atrás quedaron las tardes en la pila de pasto cortado que era el único punto verde de la ciudad.</td>
-            </tr>
-
-            <tr>
-                <td>Se reporta alza en el turismo local</td>
-                <td>Turismo y ocio</td>
-                <td>Aumenta el turismo en la ciudad de Salamanca, las autoridades descartan que haya sido debido a la layenda urbana de las brujas, adjudicándolo al buen manejo publicitario de la ciudad.</td>
-            </tr>
-
-            <tr>
-                <td>Museos abren sus puertas de manera gratuita al público</td>
-                <td>Cultura</td>
-                <td>Durante este fin de semana los Museos de todo Chile abrirán de manera gratuita sus puertas en el marco del evento "todos gratis todo cultural".</td>
-            </tr>
-        </table>
-
-       <div class="card">
-    <h3>Agregar nuevo artículo</h3>
-
-    <input type="text" id="titulo" placeholder="Título del artículo">
-    <input type="text" id="categoria" placeholder="Categoría">
-    <textarea id="contenido" placeholder="Contenido del artículo"></textarea>
-
-    <button onclick="agregarArticulo()">Publicar artículo</button>
+<!-- AVISOS -->
+<div class="avisos">
+<p>📰 Último minuto: La Uf llega a máximos históricos superándo los $40.000 — ⚽ Deportes: ColoColo no logra un triunfo en su aniversario número 101, cayendo ante Palestino — 💼 Negocios: La bolsa se mantiene en alerta ante los nuevos cambios propuestos por el nuevo gobierno — 📢 Colabora con nosotros</p>
 </div>
-        
+
+<header>
+<img src="img/logo.png" alt="Logo El Faro">
+<h1>El Faro</h1>
+<div id="fechaHora"></div>
+</header>
+
+<nav>
+<a href="index.html">Inicio</a>
+<a href="deporte.html">Deportes</a>
+<a href="negocios.html">Negocios</a>
+</nav>
+
+<main>
+
+<section class="accesos">
+<h2>Explora secciones</h2>
+<div class="accesos-grid">
+<a href="deporte.html" class="acceso-card">⚽ Deportes</a>
+<a href="negocios.html" class="acceso-card">💼 Negocios</a>
+</div>
+</section>
+
+<section class="video-section">
+<h2>Video destacado</h2>
+<article>
+<video controls>
+<source src="media/video.mp4" type="video/mp4">
+</video>
+</article>
+</section>
+
+<section>
+<h2>Noticias principales</h2>
 <div class="card">
-    <h3>Contacto</h3>
 
-    <input type="text" placeholder="Tu nombre">
-    <textarea placeholder="Escribe tu mensaje"></textarea>
+<div class="noticias-grid">
 
-    <button>Enviar</button>
+<article class="card">
+<h3>Gran avance tecnológico</h3>
+<p>lTodo indica que la nueva tendencia dentro de los teléfonos celulares serán los pliegues. Volverán los celulares almejita?.</p>
+</article>
+
+<article class="card">
+<h3>Economía tambaleando</h3>
+<p>Después de semestres favorables hoy la economía del país tambalea y se para frente a un futuro incierto. Expertos aseguran que fue algo que se advirtió desde hace meses, pero que nadie hizo caso.</p>
+</article>
+
 </div>
 
-        <video controls>
-            <source src="media/video.mp4">
-        </video>
+</div>
+</section>
 
-        <audio controls>
-            <source src="media/musica.mp3">
-        </audio>
+<section class="relacionados">
+<h2>Otros artículos</h2>
+<div class="mini-grid">
+<article class="mini-card">Mujer luego de conocer el actual precio de los huevos "se llegó a desmayar de la impresión"</article>
+<article class="mini-card">Científicos se encuentran en total alerta al no lograr descubrir después de décadas "qué le pasa a Lupita"</article>
+<article class="mini-card">Gran impacto causó la noticia del fallecimiento de la abuelita de caperucita roja. </article>
+</div>
+</section>
 
-    
+<section class="card">
+<h2>Colabora con nosotros</h2>
+<form>
+<input type="text" placeholder="Tu nombre" required>
+<textarea placeholder="Escribe tu artículo..." required></textarea>
+<button type="submit">Enviar</button>
+</form>
+</section>
 
-    </section>
+</main>
 
-    <footer>© 2026 El Faro</footer>
+<footer class="footer">
+<div class="footer-container">
 
-    <script>
-      
-        function actualizarFechaHora() {
-            const ahora = new Date();
-            const formato = ahora.toLocaleString('es-CL');
-            document.getElementById("fechaHora").textContent = formato;
-        }
-        setInterval(actualizarFechaHora, 1000);
-        actualizarFechaHora();
+<div class="footer-col">
+<h3>El Faro</h3>
+<p>El portal de noticias que te saca de la oscuridad.</p>
+</div>
 
-        
-        function actualizarContador() {
-            const total = document.getElementById("tablaArticulos").rows.length - 1;
-            document.getElementById("contadorArticulos").textContent = total;
-        }
-        actualizarContador();
+<div class="footer-col">
+<h4>Secciones</h4>
+<a href="index.html">Inicio</a>
+<a href="deporte.html">Deportes</a>
+<a href="negocios.html">Negocios</a>
+</div>
 
-       
-        function agregarArticulo() {
-            const titulo = document.getElementById("titulo").value;
-            const categoria = document.getElementById("categoria").value;
-            const contenido = document.getElementById("contenido").value;
+<div class="footer-col">
+<h4>Contacto</h4>
+<p>contacto@elfaro.cl</p>
+</div>
 
-            if (!titulo || !categoria || !contenido) {
-                alert("Completa todos los campos");
-                return;
-            }
+</div>
 
-            const tabla = document.getElementById("tablaArticulos");
+<div class="footer-bottom">
+© 2026 El Faro
+</div>
+</footer>
 
-            const fila = document.createElement("tr");
 
-           
-            const td1 = document.createElement("td");
-            const td2 = document.createElement("td");
-            const td3 = document.createElement("td");
-
-            td1.textContent = titulo;
-            td2.textContent = categoria;
-            td3.textContent = contenido;
-
-            fila.appendChild(td1);
-            fila.appendChild(td2);
-            fila.appendChild(td3);
-
-            tabla.appendChild(fila);
-
-            document.getElementById("titulo").value = "";
-            document.getElementById("categoria").value = "";
-            document.getElementById("contenido").value = "";
-
-            actualizarContador();
-        }
-    </script>
+<!-- SCRIPTS -->
+<script>
+function actualizarHora() {
+    const ahora = new Date();
+    const opciones = { 
+        year: 'numeric', month: 'long', day: 'numeric',
+        hour: '2-digit', minute: '2-digit', second: '2-digit'
+    };
+    document.getElementById("fechaHora").innerHTML = ahora.toLocaleDateString('es-ES', opciones);
+}
+setInterval(actualizarHora, 1000);
+actualizarHora();
+<script>
 
 </body>
 </html>
-
